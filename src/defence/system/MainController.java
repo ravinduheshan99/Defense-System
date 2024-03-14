@@ -1,5 +1,7 @@
 package defence.system;
 
+import javax.swing.JOptionPane;
+
 public class MainController extends javax.swing.JFrame implements Observer {
 
     public MainController() {
@@ -115,48 +117,79 @@ public class MainController extends javax.swing.JFrame implements Observer {
         txtenergy = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtoxygen = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Main Controller");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setIconImages(null);
         setName("MainController"); // NOI18N
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        txtarea1.setBackground(new java.awt.Color(0, 0, 0));
         txtarea1.setColumns(20);
+        txtarea1.setForeground(new java.awt.Color(0, 255, 0));
         txtarea1.setRows(5);
         jScrollPane2.setViewportView(txtarea1);
 
-        cbxselectdefence.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Helicopter", "Tank", "Submarine" }));
-        cbxselectdefence.setName("cbxselectdefence"); // NOI18N
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 56, 342, 249));
 
+        cbxselectdefence.setBackground(new java.awt.Color(0, 0, 0));
+        cbxselectdefence.setForeground(new java.awt.Color(0, 0, 255));
+        cbxselectdefence.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Helicopter", "Tank", "Submarine" }));
+        cbxselectdefence.setAutoscrolls(true);
+        cbxselectdefence.setName("cbxselectdefence"); // NOI18N
+        getContentPane().add(cbxselectdefence, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 56, 201, 34));
+
+        btncollectinformation.setBackground(new java.awt.Color(0, 0, 0));
+        btncollectinformation.setForeground(new java.awt.Color(0, 255, 0));
         btncollectinformation.setText("Request Informations");
         btncollectinformation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncollectinformationActionPerformed(evt);
             }
         });
+        getContentPane().add(btncollectinformation, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 56, 192, 34));
 
+        lblsoldiercount.setBackground(new java.awt.Color(255, 255, 255));
+        lblsoldiercount.setForeground(new java.awt.Color(255, 255, 255));
         lblsoldiercount.setText("Soldier Count");
+        getContentPane().add(lblsoldiercount, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 101, 90, 25));
 
+        lblfuelamount.setForeground(new java.awt.Color(255, 255, 255));
         lblfuelamount.setText("Fuel Amount");
+        getContentPane().add(lblfuelamount, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 144, 90, 25));
 
+        lblammoamount.setForeground(new java.awt.Color(255, 255, 255));
         lblammoamount.setText("Ammo Amount");
+        getContentPane().add(lblammoamount, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 187, 90, 25));
 
+        lblposition.setForeground(new java.awt.Color(255, 255, 255));
         lblposition.setText("Position");
+        getContentPane().add(lblposition, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 276, 75, 25));
 
+        checkboxsendprivate.setBackground(new java.awt.Color(0, 0, 0));
+        checkboxsendprivate.setForeground(new java.awt.Color(255, 0, 0));
         checkboxsendprivate.setText("Send Private");
         checkboxsendprivate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkboxsendprivateActionPerformed(evt);
             }
         });
+        getContentPane().add(checkboxsendprivate, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 120, -1));
 
+        btnsend.setBackground(new java.awt.Color(0, 0, 0));
+        btnsend.setForeground(new java.awt.Color(0, 255, 0));
         btnsend.setText("Send");
         btnsend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnsendActionPerformed(evt);
             }
         });
+        getContentPane().add(btnsend, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, 340, 70));
 
+        slider1.setBackground(new java.awt.Color(0, 0, 0));
+        slider1.setForeground(new java.awt.Color(255, 255, 0));
         slider1.setMajorTickSpacing(10);
         slider1.setMinorTickSpacing(2);
         slider1.setPaintLabels(true);
@@ -169,11 +202,24 @@ public class MainController extends javax.swing.JFrame implements Observer {
                 slider1StateChanged(evt);
             }
         });
+        getContentPane().add(slider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 316, 418, -1));
 
+        txtarea2.setBackground(new java.awt.Color(0, 0, 0));
         txtarea2.setColumns(20);
+        txtarea2.setForeground(new java.awt.Color(0, 255, 0));
         txtarea2.setRows(5);
         jScrollPane3.setViewportView(txtarea2);
 
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 371, 418, 100));
+        getContentPane().add(mspinnersc, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 103, 108, -1));
+
+        mtxtfuel.setBackground(new java.awt.Color(0, 0, 0));
+        mtxtfuel.setForeground(new java.awt.Color(0, 255, 0));
+        getContentPane().add(mtxtfuel, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 146, 108, -1));
+        getContentPane().add(mspinnerammo, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 192, 108, -1));
+
+        checkbox1.setBackground(new java.awt.Color(0, 0, 0));
+        checkbox1.setForeground(new java.awt.Color(0, 255, 0));
         checkbox1.setText("Area Clear");
         checkbox1.setName(""); // NOI18N
         checkbox1.addActionListener(new java.awt.event.ActionListener() {
@@ -181,152 +227,52 @@ public class MainController extends javax.swing.JFrame implements Observer {
                 checkbox1ActionPerformed(evt);
             }
         });
+        getContentPane().add(checkbox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 271, 86, 34));
 
         lblname.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        lblname.setForeground(new java.awt.Color(255, 255, 255));
         lblname.setText("Main Controller");
+        getContentPane().add(lblname, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        getContentPane().add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(438, 316, 343, -1));
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Missile");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 195, -1, -1));
+        getContentPane().add(mspinnermissile, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 192, 78, -1));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("RS Ammo");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 281, -1, -1));
+        getContentPane().add(mspinnerrsammo, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 278, 80, -1));
 
-        jLabel3.setText("Tomahawk Missile");
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Tomahawk Misil");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 236, 130, -1));
+        getContentPane().add(mspinnertm, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 233, 107, -1));
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Trident-2-Missile");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 236, -1, -1));
+        getContentPane().add(mspinnert2m, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 233, 80, -1));
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Energy");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 106, -1, -1));
 
+        txtenergy.setBackground(new java.awt.Color(0, 0, 0));
+        txtenergy.setForeground(new java.awt.Color(0, 255, 0));
+        getContentPane().add(txtenergy, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 101, 78, -1));
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Oxygen Level");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 149, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(slider1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(checkboxsendprivate)
-                                    .addGap(0, 256, Short.MAX_VALUE))
-                                .addComponent(btnsend, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txt1, javax.swing.GroupLayout.Alignment.TRAILING)))
-                        .addComponent(lblname))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblposition, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(checkbox1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblammoamount, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(mspinnerammo, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblsoldiercount, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(mspinnersc))
-                                    .addComponent(cbxselectdefence, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(mspinnertm, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblfuelamount, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(mtxtfuel)))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btncollectinformation, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel1)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel2))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(2, 2, 2)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(txtoxygen)
-                                                    .addComponent(txtenergy)
-                                                    .addComponent(mspinnermissile, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)))
-                                            .addComponent(mspinnert2m)
-                                            .addComponent(mspinnerrsammo))))))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblname)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btncollectinformation, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbxselectdefence, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(lblsoldiercount, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(mspinnersc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel5))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(lblfuelamount, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(mtxtfuel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel6)
-                                            .addComponent(txtoxygen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lblammoamount, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(mspinnerammo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel1)
-                                        .addComponent(mspinnermissile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(21, 21, 21)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(mspinnertm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4)
-                                    .addComponent(mspinnert2m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblposition, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(checkbox1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(mspinnerrsammo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtenergy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(43, 43, 43))))
-                    .addComponent(jScrollPane2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(slider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(checkboxsendprivate))
-                    .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnsend, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
-                .addContainerGap())
-        );
+        txtoxygen.setBackground(new java.awt.Color(0, 0, 0));
+        txtoxygen.setForeground(new java.awt.Color(0, 255, 0));
+        getContentPane().add(txtoxygen, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 146, 78, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\Documents\\Self Learning Courses\\iCM-106-iCET\\Modules\\05-OOP\\Assignments\\Courseworks\\Week 05\\1.jpg")); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -354,6 +300,11 @@ public class MainController extends javax.swing.JFrame implements Observer {
 
     private void btncollectinformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncollectinformationActionPerformed
         Observable.getInstance().reqInfo(cbxselectdefence.getSelectedItem().toString(), checkboxsendprivate.isSelected());
+        if(checkboxsendprivate.isSelected()){
+            JOptionPane.showMessageDialog(null,"Successfully Request the Updates from "+cbxselectdefence.getSelectedItem().toString());
+        }else{
+            JOptionPane.showMessageDialog(null,"Please Select Private Message Option Before Requesting!");
+        }
     }//GEN-LAST:event_btncollectinformationActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -368,6 +319,7 @@ public class MainController extends javax.swing.JFrame implements Observer {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblammoamount;

@@ -1,5 +1,7 @@
 package defence.system;
 
+import javax.swing.JOptionPane;
+
 public class Helicopter extends javax.swing.JFrame implements Observer {
 
     private int sc;
@@ -128,170 +130,120 @@ public class Helicopter extends javax.swing.JFrame implements Observer {
         txtfuel = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         btnsendupdate = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Helicopter");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblareaclearance.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblareaclearance.setForeground(new java.awt.Color(0, 255, 0));
         lblareaclearance.setText("Area Not Cleared");
+        getContentPane().add(lblareaclearance, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 34, -1, 31));
 
+        btnshoot.setBackground(new java.awt.Color(0, 0, 0));
+        btnshoot.setForeground(new java.awt.Color(255, 0, 0));
         btnshoot.setText("Shoot");
         btnshoot.setEnabled(false);
+        getContentPane().add(btnshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 67, 113, 40));
 
+        btnmo.setBackground(new java.awt.Color(0, 0, 0));
+        btnmo.setForeground(new java.awt.Color(0, 0, 255));
         btnmo.setText("Missile Operation");
         btnmo.setEnabled(false);
+        getContentPane().add(btnmo, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 67, -1, 40));
 
+        btnlo.setBackground(new java.awt.Color(0, 0, 0));
+        btnlo.setForeground(new java.awt.Color(255, 102, 0));
         btnlo.setText("Laser Operation");
         btnlo.setEnabled(false);
+        getContentPane().add(btnlo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 125, 113, 40));
 
+        sliderenergy.setBackground(new java.awt.Color(0, 0, 0));
+        sliderenergy.setForeground(new java.awt.Color(255, 255, 0));
         sliderenergy.setMajorTickSpacing(10);
         sliderenergy.setMinorTickSpacing(2);
         sliderenergy.setOrientation(javax.swing.JSlider.VERTICAL);
         sliderenergy.setPaintLabels(true);
         sliderenergy.setPaintTicks(true);
         sliderenergy.setValue(100);
+        getContentPane().add(sliderenergy, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 67, -1, 404));
 
+        txtarea1.setBackground(new java.awt.Color(0, 0, 0));
         txtarea1.setColumns(20);
+        txtarea1.setForeground(new java.awt.Color(0, 255, 0));
         txtarea1.setRows(5);
         jScrollPane1.setViewportView(txtarea1);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 467, 227));
+        getContentPane().add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 448, 379, 23));
+
+        btnsend.setBackground(new java.awt.Color(0, 0, 0));
+        btnsend.setForeground(new java.awt.Color(0, 255, 0));
         btnsend.setText("Send");
         btnsend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnsendActionPerformed(evt);
             }
         });
+        getContentPane().add(btnsend, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 448, 82, -1));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Soldier Count");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 80, -1, -1));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Ammo Count");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 182, 80, -1));
 
+        checkboxposition.setBackground(new java.awt.Color(0, 0, 0));
+        checkboxposition.setForeground(new java.awt.Color(0, 255, 0));
         checkboxposition.setText("Position");
         checkboxposition.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkboxpositionActionPerformed(evt);
             }
         });
+        getContentPane().add(checkboxposition, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 178, -1, -1));
+        getContentPane().add(spinnersc, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 77, 96, -1));
+        getContentPane().add(spinnerammo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 50, -1));
 
         lblname.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        lblname.setForeground(new java.awt.Color(255, 255, 255));
         lblname.setText("Helicopter");
+        getContentPane().add(lblname, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 35, -1, -1));
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Missile");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, -1, -1));
+        getContentPane().add(spinnermissile, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 179, 50, -1));
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Fuel Amount");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 138, -1, -1));
 
+        txtfuel.setBackground(new java.awt.Color(0, 0, 0));
+        txtfuel.setForeground(new java.awt.Color(0, 255, 0));
+        getContentPane().add(txtfuel, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 135, 96, -1));
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Energy");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 47, -1, -1));
 
+        btnsendupdate.setBackground(new java.awt.Color(0, 0, 0));
+        btnsendupdate.setForeground(new java.awt.Color(255, 255, 0));
         btnsendupdate.setText("Send Updates");
         btnsendupdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnsendupdateActionPerformed(evt);
             }
         });
+        getContentPane().add(btnsendupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 125, 130, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnsend, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(spinnermissile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(txtfuel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btnshoot, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(btnmo)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel4)
-                                                .addComponent(jLabel2))
-                                            .addGap(25, 25, 25))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(lblareaclearance)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(checkboxposition)
-                                            .addGap(108, 108, 108)
-                                            .addComponent(jLabel3))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(btnlo, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(btnsendupdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(spinnerammo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(spinnersc, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(41, 41, 41)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblname)
-                        .addGap(417, 417, 417)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sliderenergy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(33, 33, 33))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sliderenergy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblname)
-                            .addComponent(lblareaclearance, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(2, 2, 2)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnmo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnshoot, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(spinnersc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btnlo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel4)
-                                .addComponent(txtfuel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnsendupdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(checkboxposition)
-                            .addComponent(jLabel3)
-                            .addComponent(spinnerammo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(spinnermissile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnsend))))
-                .addGap(24, 24, 24))
-        );
+        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\Documents\\Self Learning Courses\\iCM-106-iCET\\Modules\\05-OOP\\Assignments\\Courseworks\\Week 05\\1.jpg")); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -311,6 +263,7 @@ public class Helicopter extends javax.swing.JFrame implements Observer {
 
     private void btnsendupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsendupdateActionPerformed
         Observable.getInstance().getInfo("Helicopter", currentInfo(), tk, sm);
+            JOptionPane.showMessageDialog(null,"Updates Sent Successfully!");
     }//GEN-LAST:event_btnsendupdateActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -325,6 +278,7 @@ public class Helicopter extends javax.swing.JFrame implements Observer {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblareaclearance;
     private javax.swing.JLabel lblname;
